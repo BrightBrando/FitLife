@@ -3,34 +3,32 @@
 <head>
 <style>
 
-
-.body {
-    background: #f3e9dc;
-}
-
 .start {
 
 
     position: relative;
     padding: 50px;
-    margin: 250px;
+    margin: 200px;
     background: #c08552;
     text-align: center;
 }
 
 
-button {
-
-    padding: 30px;
-    cursor: pointer;
-    position: relative;
-    z-index: 2;
+.startb {
+  background-color: #5e3023;
+  border: none;
+  color: black;
+  padding: 16px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  transition: 0.3s;
+  border-radius: 50%;
 }
 
-.startb {
-color: #000000;
-background-color: #5e3023;
-    border-radius: 50%;
+.startb:hover {
+  background-color: #3e8e41;
+  color: white;
 }
 
 a{
@@ -40,41 +38,9 @@ a{
 }
 
 
-.gif{
-
-    
-    position: absolute;
-    width: 120px;
-    opacity: 0;
-    transform: scale(0);
-    transition: 0.4s ease;
-}
-
-.gif1{
-    top: -150px;
-    left: -150px;
-}
-
-.gif2{
-    top: -150px;
-    right: -150px;
-}
-
-.gif3{
-    bottom: -150px;
-    left: -150px;
-}
-
-.gif4{
-    bottom: -150px;
-    right: -150px;
-}
 
 
-.startb:hover ~ .gif{
-    opacity: 1;
-    transform: scale(1);
-}
+
 
 </style>
 <title>FitLife!</title>
@@ -87,11 +53,6 @@ a{
 <button class="startb">
 <a href="start.html"><h1>Start FitLife!</h1></a>
 </button>
-
-<img src="runstick.gif" class="gif gif1">
-<img src="runstick.gif" class="gif gif2">
-<img src="runstick.gif" class="gif gif3">
-<img src="runstick.gif" class="gif gif4">
 
 </div>
 
