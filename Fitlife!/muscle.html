@@ -9,12 +9,12 @@
 
 
 <style>
-/* Sidebar fully hidden */
+
 .sidebar {
     position: fixed;
     top: 0;
-    left: -220px;         /* completely off-screen (width + padding) */
-    width: 200px;         /* sidebar width */
+    left: -220px;       
+    width: 200px;         
     height: 100%;
     background: #f2f2f2;
     padding: 20px;
@@ -23,25 +23,25 @@
     z-index: 1000;
 }
 
-/* Invisible hover strip on the left edge */
+
 .sidebar-trigger {
     position: fixed;
     top: 0;
     left: 0;
-    width: 10px;           /* tiny area to detect hover */
+    width: 10px;          
     height: 100%;
     z-index: 999;
     cursor: pointer;
-    background: transparent; /* optional */
+    background: transparent;
 }
 
-/* Slide sidebar in when the trigger or sidebar is hovered */
+
 .sidebar-trigger:hover + .sidebar,
 .sidebar:hover {
     left: 0;
 }
 
-/* Buttons inside sidebar */
+
 .buttons {
     display: flex;
     flex-direction: column;
@@ -69,15 +69,15 @@
     background: #02835e;
 }
 
-/* Optional: shift content when sidebar appears */
+
 .content {
     transition: margin-left 0.3s ease;
 }
 
 .sidebar:hover ~ .content {
-    margin-left: 200px;  /* same as sidebar width */
+    margin-left: 200px; 
 }
-/* General */
+
 body{
     margin:0;
     font-family:'Orbitron', sans-serif;
@@ -85,7 +85,7 @@ body{
     color: #222;
 }
 
-/* HEADER */
+
 header{
     display:flex;
     justify-content:space-between;
@@ -141,7 +141,11 @@ header{
     width:100%;
 }
 
-/* HERO SECTION */
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
 .hero{
     display:flex;
     justify-content:center;
@@ -154,7 +158,7 @@ header{
     text-align:center;
 }
 
-/* CONTENT SECTION */
+
 section{
     padding:50px 20px;
     max-width:1200px;
@@ -167,7 +171,7 @@ h2{
     margin-bottom:30px;
 }
 
-/* EXERCISES GRID */
+
 .exercises{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -203,7 +207,11 @@ h2{
     color:#555;
 }
 
-/* CTA BUTTON */
+.exercise-card a{
+    display: block;
+    height: 100%;
+}
+
 .cta{
     display:flex;
     justify-content:center;
@@ -228,10 +236,10 @@ h2{
 
 </style>
 </head>
-<!-- Invisible hover strip -->
+
 <div class="sidebar-trigger"></div>
 
-<!-- Actual sidebar -->
+
 <div class="sidebar">
     <div class="buttons">
         <a href="muscle.html" target="content" class="button1">Muscle Training</a>
@@ -244,7 +252,7 @@ h2{
 <header>
 <div class="logo-section">
    <a href="main.html"> <img src="logo.png" class="logo"> </a>
-    <div class="site-name"><a href="main.html" >FitLife</a></div>
+    <div class="site-name">MuscleTraining</div>
 </div>
 
 <nav class="nav">

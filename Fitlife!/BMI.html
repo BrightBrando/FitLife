@@ -1,74 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BMI Calculator</title>
-    <style>
-        .bmi-box {
-            width: 300px;
-            margin: 50px auto;
-            padding: 20px;
-            border: 2px solid #333;
-            border-radius: 8px;
-            background: #f9f9f9;
-            text-align: center;
-            font-family: Arial, sans-serif;
-        }
-        input {
-            width: 90%;
-            padding: 8px;
-            margin: 8px 0;
-            font-size: 16px;
-        }
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            margin-top: 10px;
-            cursor: pointer;
-        }
-        #output {
-            margin-top: 15px;
-            font-weight: bold;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitLife - BMI Calculator</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Orbitron', sans-serif;
+    background-color: mintcream;
+    color: #222;
+}
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 40px;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(6px);
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo{
+    width:50px;
+}
+
+.site-name{
+    font-size:26px;
+    color:rgb(98,174,144);
+    font-weight:bold;
+}
+
+.nav{
+    display:flex;
+    gap:20px;
+}
+
+.nav a{
+    text-decoration:none;
+    color:rgb(98,174,144);
+    font-weight:bold;
+    position:relative;
+}
+
+.nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:rgb(2,131,94);
+    transition:0.3s;
+}
+
+.nav a:hover::after{
+    width:100%;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.hero{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:20vh;
+    background: url('muscle-hero.jpg') center/cover no-repeat;
+    color:white;
+    text-shadow: 0 0 10px black;
+    font-size:2.5rem;
+    text-align:center;
+}
+
+section{
+    padding:50px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+h2{
+    color:rgb(98,174,144);
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.bmi-box {
+    width: 300px;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 8px;
+    background: whitesmoke;
+    text-align: center;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+}
+
+input {
+    width: 90%;
+    padding: 8px;
+    margin: 8px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    margin-top: 10px;
+    cursor: pointer;
+    background-color:rgb(98,174,144);
+    color:white;
+    border:none;
+    border-radius:8px;
+    transition:all 0.3s;
+}
+
+button:hover {
+    background-color:rgb(2,131,94);
+    box-shadow:0 0 15px #00ff99;
+}
+
+#output {
+    margin-top: 15px;
+    font-weight: bold;
+    color: rgb(98,174,144);
+}
+</style>
 </head>
-<body>
-    <div class="bmi-box">
-        <h2>BMI Calculator</h2>
-        <input type="number" id="weight" placeholder="Enter weight (kg)" />
-        <input type="number" id="height" placeholder="Enter height (cm)" />
-        <br>
-        <button onclick="calculateBMI()">Calculate BMI</button>
-        <div id="output"></div>
-    </div>
 
-    <script>
-        function calculateBMI() {
-            let weight = document.getElementById('weight').value;
-            let height = document.getElementById('height').value;
+<header>
+<div class="logo-section">
+   <a href="main.html"> <img src="logo.png" class="logo"> </a>
+    <div class="site-name">BMI Calculator</div>
+</div>
 
-            if (weight > 0 && height > 0) {
-                let bmi = weight / ((height / 100) * (height / 100));
-                let result = "";
+<nav class="nav">
+    <a href="main.html" target="content">Home</a>
+    <a href="Nutrition.html" target="content">Nutrition</a>
+    <a href="About.html" target="content">About</a>
+</nav>
+</header>
 
-                if (bmi < 18.5) {
-                    result = "Underweight";
-                } else if (bmi >= 18.5 && bmi < 24.9) {
-                    result = "Normal weight";
-                } else if (bmi >= 25 && bmi < 29.9) {
-                    result = "Overweight";
-                } else {
-                    result = "Obesity";
-                }
+<div class="hero">
+    Calculate Your BMI!
+</div>
 
-                document.getElementById("output").innerHTML = 
-                "Your BMI is " + bmi.toFixed(2) + " (" + result + ")";
+<section>
+<h2>BMI Calculator</h2>
+<div class="bmi-box">
+    <input type="number" id="weight" placeholder="Enter weight (kg)" />
+    <input type="number" id="height" placeholder="Enter height (cm)" />
+    <br>
+    <button onclick="calculateBMI()">Calculate BMI</button>
+    <div id="output"></div>
+</div>
+</section>
+
+<script>
+    function calculateBMI() {
+        let weight = document.getElementById('weight').value;
+        let height = document.getElementById('height').value;
+
+        if (weight > 0 && height > 0) {
+            let bmi = weight / ((height / 100) * (height / 100));
+            let result = "";
+
+            if (bmi < 18.5) {
+                result = "Underweight";
+            } else if (bmi >= 18.5 && bmi < 24.9) {
+                result = "Normal weight";
+            } else if (bmi >= 25 && bmi < 29.9) {
+                result = "Overweight";
             } else {
-                document.getElementById("output").innerHTML = 
-                "Please enter valid weight and height values.";
+                result = "Obesity";
             }
+
+            document.getElementById("output").innerHTML = 
+            "Your BMI is " + bmi.toFixed(2) + " (" + result + ")";
+        } else {
+            document.getElementById("output").innerHTML = 
+            "Please enter valid weight and height values.";
         }
-    </script>
+    }
+</script>
 </body>
 </html>
