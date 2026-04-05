@@ -3,18 +3,52 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FitLife!</title>
+<title>FitLife - Weight Loss Training</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
 
 
 <style>
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button {
+    padding: 10px;
+    background: #88a99c;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.button1 {
+    padding: 10px;
+    background: #02835e;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+} 
+.button:hover {
+    background: #02835e;
+}
+
+
+.content {
+    transition: margin-left 0.3s ease;
+}
+
 body{
     margin:0;
     font-family:'Orbitron', sans-serif;
     background-color: mintcream;
     color: #222;
 }
+
 
 header{
     display:flex;
@@ -76,7 +110,7 @@ a{
     text-decoration: none;
 }
 
-.hero{
+.text{
     display:flex;
     justify-content:center;
     align-items:center;
@@ -87,6 +121,7 @@ a{
     font-size:2.5rem;
     text-align:center;
 }
+
 
 section{
     padding:50px 20px;
@@ -100,6 +135,7 @@ h2{
     margin-bottom:30px;
 }
 
+
 .exercises{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -107,7 +143,7 @@ h2{
 }
 
 .exercise-card{
-    background: lightblue;
+    background:lightblue;
     border-radius:10px;
     box-shadow:0 0 15px rgba(0,0,0,0.1);
     overflow:hidden;
@@ -122,18 +158,11 @@ h2{
 .exercise-card img{
     width:100%;
     height:200px;
-    object-fit:cover;
+  
 }
 
 .exercise-card h3{
     margin:15px 0 5px 0;
-    color: inherit;
-text-decoration: none;
-}
-
-.exercise-card a{
-    display: block;
-    height: 100%;
 }
 
 .exercise-card p{
@@ -142,13 +171,18 @@ text-decoration: none;
     color:#555;
 }
 
-.cta{
+.exercise-card a{
+    display: block;
+    height: 100%;
+}
+
+.weekbutton{
     display:flex;
     justify-content:center;
     margin-top:40px;
 }
 
-.cta button{
+.weekbutton button{
     padding:15px 30px;
     font-size:1.2rem;
     background-color:rgb(98,174,144);
@@ -159,62 +193,71 @@ text-decoration: none;
     transition:all 0.3s;
 }
 
-.cta button:hover{
+.weekbutton button:hover{
     background-color:rgb(2,131,94);
     box-shadow:0 0 15px #00ff99;
+}
+.logo-section button {
+    padding: 5px 5px;
+    background-color: 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 </style>
 </head>
 
+
+
+
 <header>
+       
 <div class="logo-section">
+<button><a href="weight.html"><strong><<<</strong></a></button>
    <a href="main.html"> <img src="logo.png" class="logo"> </a>
-    <div class="site-name">Nutrition</div>
+    <div class="site-name">WeightLoss</div>
 </div>
 
 <nav class="nav">
     <a href="main.html" target="content">Home</a>
-    <a href="Nutrition.html" target="content">Nutrition</a>
-    <a href="about.html" target="content">About</a>
+    <a href="Nut4Weight.html" target="content">Nutrition</a>
+    <a href="About.html" target="content">About</a>
 </nav>
 </header>
 
-<div class="hero">
-    Welcome to FitLife Nutrition Page!
+<div class="text">
+   Intermediate exercises for those who had some past experiences!
 </div>
 
 <section>
 
 <div class="exercises">
     <div class="exercise-card">
-        <a href="Nut4Musc.html">
-            <h3>Muscle Training Nutrition</h3>
-            <p>Proper Nutrition for Muscle Training</p>
-        </a>
-    </div>
-
-    <div class="exercise-card">
-        <a href="Nut4Weight.html">
-            <h3>Weight Loss Nutrition</h3>
-            <p>Proper Nutrition for Weight Loss</p>
-        </a>
+        <img src="JumpingJacks.jpg" alt="Jumping Jacks">
+        <h3>Jumping Jacks</h3>
+        <p>SA full-body cardio exercise where you jump while spreading your legs and raising your arms overhead. It helps increase your heart rate and burn calories efficiently.</p>
     </div>
     <div class="exercise-card">
-        <a href="Nut4Flex.html">
-            <h3>Flexibility Nutrition</h3>
-            <p>Proper Nutrition for Flexibility Training</p>
-        </a>
+        <img src="HighKnees.gif" alt="High Knees">
+        <h3>High Knees</h3>
+        <p>A running-in-place motion where you lift your knees toward your chest while pumping your arms. It improves coordination and boosts cardiovascular endurance.</p>
     </div>
     <div class="exercise-card">
-        <a href="Nut4Ath.html">
-            <h3>Athletic Nutrition</h3>
-            <p>Proper Nutrition For Athletes</p>
-        </a>
+        <img src="jogging.gif" alt="Jogging">
+        <h3>Jogging</h3>
+        <p>A steady, light-paced running activity done at a comfortable speed. It helps burn calories and improve overall stamina over time.</p>
     </div>
-  
+    <div class="exercise-card">
+        <img src="plank.gif" alt="Plank">
+        <h3>Plank</h3>
+        <p>Strengthens your core to enhance stability, posture, and overall body control.</p>
+    </div>
 </div>
-
-</section>
+<div class="weekbutton">
+    <button><a href="WeightWeek2.html">Click to access our Week plan for Intermediate Training</a></button>
+</div>
 
 </body>
 </html>

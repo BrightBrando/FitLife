@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitLife - Muscle Training</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+
+
+<style>
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button {
+    padding: 10px;
+    background: #88a99c;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.button1 {
+    padding: 10px;
+    background: #02835e;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+} 
+.button:hover {
+    background: #02835e;
+}
+
+
+.content {
+    transition: margin-left 0.3s ease;
+}
+
+
+
+body{
+    margin:0;
+    font-family:'Orbitron', sans-serif;
+    background-color: mintcream;
+    color: #222;
+}
+
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 40px;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(6px);
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo{
+    width:50px;
+}
+
+.site-name{
+    font-size:26px;
+    color:rgb(98,174,144);
+    font-weight:bold;
+}
+
+.nav{
+    display:flex;
+    gap:20px;
+}
+
+.nav a{
+    text-decoration:none;
+    color:rgb(98,174,144);
+    font-weight:bold;
+    position:relative;
+}
+
+.nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:rgb(2,131,94);
+    transition:0.3s;
+}
+
+.nav a:hover::after{
+    width:100%;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+section{
+    padding:50px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+h2{
+    color:rgb(98,174,144);
+    text-align:center;
+    margin-bottom:30px;
+}
+
+
+.exercises{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    flex-wrap: nowrap;
+}
+
+.exercise-card{
+    background:lightblue;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:transform 0.3s;
+    text-align:center;
+    width: 100%;
+}
+.insideEXCARD{
+  background:whitesmoke;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:transform 0.3s;
+    text-align:center;
+    height: 400px;
+}
+.exercise-card:hover{
+    transform: scale(1.05);
+}
+
+.exercise-card h2{
+    size:1.2rem;
+    color: black;
+    margin:15px 0 5px 0;
+}
+
+.exercise-card p{
+    padding:0 10px 15px 10px;
+    font-size:0.9rem;
+    color:#555;
+}
+
+.exercise-card a{
+    display: block;
+    height: 100%;
+}
+
+.logo-section button {
+    padding: 5px 5px;
+    background-color: 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+</style>
+</head>
+
+
+<header>
+<div class="logo-section">
+      <button><a href="MuscleTrainingLight.html"><strong><<<</strong></a></button>
+   <a href="main.html"> <img src="logo.png" class="logo"> </a>
+    <div class="site-name">MuscleTraining</div>
+</div>
+
+<nav class="nav">
+    <a href="main.html" target="content">Home</a>
+    <a href="Nut4Musc.html" target="content">Nutrition</a>
+    <a href="About.html" target="content">About</a>
+</nav>
+</header>
+
+
+<body>
+<section>
+
+<div class="exercises">
+    <div class="exercise-card">
+        <h2><strong>Monday</strong></h2>
+        <div class="insideEXCARD">
+           <br> Bodyweight Squats — 2 sets × 10 reps <br> 
+          <br>    Push-ups — 2 sets × 5–8 reps <br> 
+          <br>    Superman — 2 sets × 10 reps <br> 
+          <br>    Plank — 2 sets × 20 sec <br> 
+                 <br> Rest: 60–90 sec between sets <br> 
+</div>
+    </div>
+    <div class="exercise-card">
+        <h2><strong>Tuesday</strong></h2>
+        <div class="insideEXCARD"> <br>Optional:<br> <br>
+             walking stretching </div>
+    </div>
+    <div class="exercise-card">
+        <h2><strong>Wednesday</strong></h2>
+        <div class="insideEXCARD">   <br> Bodyweight Squats — 2 sets × 10 reps <br> 
+          <br>    Push-ups — 2 sets × 5–8 reps <br> 
+          <br>    Superman — 2 sets × 10 reps <br> 
+          <br>    Plank — 2 sets × 20 sec <br> 
+                 <br> Rest: 60–90 sec between sets <br> </div>
+    </div>
+    <div class="exercise-card">
+        <h2><strong>Thursday</strong></h2>
+        <div class="insideEXCARD"><br> REST</div>
+    </div>
+      <div class="exercise-card">
+        <h2><strong>Friday</strong></h2>
+        <div class="insideEXCARD">   <br> Bodyweight Squats — 2 sets × 10 reps <br> 
+          <br>    Push-ups — 2 sets × 5–8 reps <br> 
+          <br>    Superman — 2 sets × 10 reps <br> 
+          <br>    Plank — 2 sets × 20 sec <br> 
+                 <br> Rest: 60–90 sec between sets <br> </div>
+    </div>
+    <div class="exercise-card">
+        <h2><strong>Saturday</strong></h2>
+        <div class="insideEXCARD"> <br> Stretching or light cardio (10–15 minutes) </div>
+    </div>
+     <div class="exercise-card">
+        <h2><strong>Sunday</strong></h2>
+        <div class="insideEXCARD"><br> <strong>  Optional last day challenge</strong><br> <br> Bodyweight Squats — 1 set til failure<br> 
+          <br>    Push-ups — 1 set til failure<br> 
+          <br>    Superman — 1 set til failure <br> 
+          <br>    Plank — 1 set til failure <br> 
+                 <br> Rest: 60–90 sec between sets <br> </div>
+    </div>
+</div>
+   
+</body>
+</html>
+

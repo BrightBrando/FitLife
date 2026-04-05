@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FitLife!</title>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+
+
+
+<style>
+
+body{
+    margin:0;
+    font-family:'Orbitron', sans-serif;
+    background-color: mintcream;
+    color: #222;
+}
+
+
+header{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 40px;
+    background:rgba(255,255,255,0.85);
+    backdrop-filter:blur(6px);
+    position:sticky;
+    top:0;
+    z-index:10;
+}
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo{
+    width:50px;
+}
+
+.site-name{
+    font-size:26px;
+    color:rgb(98,174,144);
+    font-weight:bold;
+}
+
+.nav{
+    display:flex;
+    gap:20px;
+}
+
+.nav a{
+    text-decoration:none;
+    color:rgb(98,174,144);
+    font-weight:bold;
+    position:relative;
+}
+
+.nav a::after{
+    content:"";
+    position:absolute;
+    left:0;
+    bottom:-5px;
+    width:0%;
+    height:2px;
+    background:rgb(2,131,94);
+    transition:0.3s;
+}
+
+.nav a:hover::after{
+    width:100%;
+}
+
+a{
+    color: inherit;
+    text-decoration: none;
+}
+
+.text{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:60vh;
+    background: url('muscle-hero.jpg') center/cover no-repeat;
+    color:black;
+    text-shadow: 0 0 10px black;
+    font-size:2.5rem;
+    text-align:center;
+}
+
+
+section{
+    padding:50px 20px;
+    max-width:1200px;
+    margin:auto;
+}
+
+h2{
+    color:rgb(98,174,144);
+    text-align:center;
+    margin-bottom:30px;
+}
+
+
+.exercises{
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap:20px;
+}
+
+.exercise-card{
+    background: lightblue;
+    border-radius:10px;
+    box-shadow:0 0 15px rgba(0,0,0,0.1);
+    overflow:hidden;
+    transition:transform 0.3s;
+    text-align:center;
+}
+
+.exercise-card:hover{
+    transform: scale(1.05);
+}
+
+.exercise-card img{
+    width:100%;
+    height:200px;
+    object-fit:cover;
+}
+
+.exercise-card h3{
+    margin:15px 0 5px 0;
+    color: inherit;
+text-decoration: none;
+}
+
+.exercise-card a{
+    display: block;
+    height: 100%;
+}
+
+.exercise-card p{
+    padding:0 10px 15px 10px;
+    font-size:0.9rem;
+    color:#555;
+}
+
+</style>
+</head>
+
+<header>
+<div class="logo-section">
+   <a href="main.html"> <img src="logo.png" class="logo"> </a>
+    <div class="site-name">Home</div>
+</div>
+
+<nav class="nav">
+    <a href="main.html" target="content">Home</a>
+    <a href="Nutrition.html" target="content">Nutrition</a>
+    <a href="About.html" target="content">About</a>
+</nav>
+</header>
+
+<div class="text">
+    Pick your weight range and find the best nutrition for you!
+</div>
+
+<section>
+
+<div class="exercises">
+    <div class="exercise-card">
+       
+            <h1>50-60 kg</h1>
+                <h3> Target Macronutrients Amount</h3>
+                <ul>
+                    <li>Protein: 80–120g</li>
+                    <li>Carbs: 200–350g</li>
+                    <li>Fats: 30–60g</li>
+                    <li>Calories: maintenance or slight surplus</li>
+                </ul>   
+            <p><br> <h3>What to eat</h3><br>
+                <ul>
+                      <li>Protein: chicken, fish, eggs</li>
+                    <li>Carbs: rice (main fuel), oats</li>
+                    <li>Fats: peanut butter, eggs</li>
+                    <li>Extras: bananas, berries</li>
+                </ul>
+            </p>
+            <p> <br><h3> Guide</h3><br>
+                <ul>
+                    <li>carbs = energy</li>
+                    <li>Eat before & after training</li>
+                    <li>Staying Hydrated</li>
+                    <li>Don't under-eat</li>
+                </ul> </p>
+
+</p>
+    
+    </div>
+
+    <div class="exercise-card">
+   
+            <h1>60-70 kg</h1>
+   <h3>Target Macronutrients Amount</h3>
+   <ul>
+                    <li>Protein: 100–140g</li>
+                    <li>Carbs: 250–400g</li>
+                    <li>Fats: 40–70g</li>
+                    <li>Calories: slight surplus</li>
+                </ul>   
+            <p><br> <h3>What to eat</h3><br>
+                <ul>
+                    <li>Protein: chicken, fish, eggs</li>
+                    <li>Carbs: rice (main fuel), oats</li>
+                    <li>Fats: peanut butter, eggs</li>
+                    <li>Extras: bananas, berries</li>
+                </ul>
+            </p>
+            <p> <br><h3> Guide</h3><br>
+                <ul>
+                    <li>carbs = energy</li>
+                    <li>Eat before & after training</li>
+                    <li>Staying Hydrated</li>
+                    <li>Don't under-eat</li>
+                </ul> </p>
+</p>        
+    </div>
+    <div class="exercise-card">
+    
+            <h1>70-80 kg</h1>
+   <h3> Target Macronutrients Amount</h3>
+                <ul>
+                    <li>Protein: 110–160g</li>
+                    <li>Carbs: 300–450g</li>
+                    <li>Fats: 50–80g</li>
+                    <li>Calories: slight surplus</li>
+                </ul>   
+            <p><br> <h3>What to eat</h3><br>
+                <ul>
+                     <li>Protein: chicken, fish, eggs</li>
+                    <li>Carbs: rice (main fuel), oats</li>
+                    <li>Fats: peanut butter, eggs</li>
+                    <li>Extras: bananas, berries</li>
+                </ul>
+            </p>
+            <p> <br><h3> Guide</h3><br>
+                <ul>
+                    <li>carbs = energy</li>
+                    <li>Eat before & after training</li>
+                    <li>Staying Hydrated</li>
+                    <li>Don't under-eat</li>
+                </ul> </p>
+</p>     
+    </div>
+    <div class="exercise-card">
+       
+            <h1>80-90 kg</h1>
+   <h3> Target Macronutrients Amount</h3>
+                <ul>
+                    <li>Protein: 130–180g</li>
+                    <li>Carbs: 350–500g</li>
+                    <li>Fats: 60–90g</li>
+                    <li>Calories: higher intake</li>
+                </ul>   
+            <p><br> <h3>What to eat</h3><br>
+                <ul>
+                    <li>Protein: chicken, fish, eggs</li>
+                    <li>Carbs: rice (main fuel), oats</li>
+                    <li>Fats: peanut butter, eggs</li>
+                    <li>Extras: bananas, berries</li>
+                </ul>
+            </p>
+            <p> <br><h3> Guide</h3><br>
+                <ul>
+                    <li>carbs = energy</li>
+                    <li>Eat before & after training</li>
+                    <li>Staying Hydrated</li>
+                    <li>Don't under-eat</li>
+                </ul> </p>
+</p>       
+    </div>
+
+    
+</div>
+
+</section>
+
+</body>
+</html>
+

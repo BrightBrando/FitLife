@@ -3,18 +3,53 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FitLife!</title>
+<title>FitLife - Flexibility Training</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
 
 
 <style>
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.button {
+    padding: 10px;
+    background: #88a99c;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.button1 {
+    padding: 10px;
+    background: #02835e;
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    border-radius: 5px;
+} 
+.button:hover {
+    background: #02835e;
+}
+
+
+.content {
+    transition: margin-left 0.3s ease;
+}
+
+
 body{
     margin:0;
     font-family:'Orbitron', sans-serif;
     background-color: mintcream;
     color: #222;
 }
+
 
 header{
     display:flex;
@@ -76,7 +111,7 @@ a{
     text-decoration: none;
 }
 
-.hero{
+.text{
     display:flex;
     justify-content:center;
     align-items:center;
@@ -87,6 +122,7 @@ a{
     font-size:2.5rem;
     text-align:center;
 }
+
 
 section{
     padding:50px 20px;
@@ -100,6 +136,7 @@ h2{
     margin-bottom:30px;
 }
 
+
 .exercises{
     display:grid;
     grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
@@ -107,7 +144,7 @@ h2{
 }
 
 .exercise-card{
-    background: lightblue;
+    background:lightblue;
     border-radius:10px;
     box-shadow:0 0 15px rgba(0,0,0,0.1);
     overflow:hidden;
@@ -122,18 +159,10 @@ h2{
 .exercise-card img{
     width:100%;
     height:200px;
-    object-fit:cover;
 }
 
 .exercise-card h3{
     margin:15px 0 5px 0;
-    color: inherit;
-text-decoration: none;
-}
-
-.exercise-card a{
-    display: block;
-    height: 100%;
 }
 
 .exercise-card p{
@@ -142,13 +171,18 @@ text-decoration: none;
     color:#555;
 }
 
-.cta{
+.exercise-card a{
+    display: block;
+    height: 100%;
+}
+
+.weekbutton{
     display:flex;
     justify-content:center;
     margin-top:40px;
 }
 
-.cta button{
+.weekbutton button{
     padding:15px 30px;
     font-size:1.2rem;
     background-color:rgb(98,174,144);
@@ -159,63 +193,68 @@ text-decoration: none;
     transition:all 0.3s;
 }
 
-.cta button:hover{
+.weekbutton button:hover{
     background-color:rgb(2,131,94);
     box-shadow:0 0 15px #00ff99;
+}
+.logo-section button {
+    padding: 5px 5px;
+    background-color: 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 </style>
 </head>
 
 <header>
 <div class="logo-section">
+         <button><a href="flex.html"><strong><<<</strong></a></button>
    <a href="main.html"> <img src="logo.png" class="logo"> </a>
-    <div class="site-name">Nutrition</div>
+    <div class="site-name">Flexibility</div>
 </div>
 
 <nav class="nav">
     <a href="main.html" target="content">Home</a>
-    <a href="Nutrition.html" target="content">Nutrition</a>
-    <a href="about.html" target="content">About</a>
+    <a href="Nut4Flex.html" target="content">Nutrition</a>
+    <a href="About.html" target="content">About</a>
 </nav>
 </header>
 
-<div class="hero">
-    Welcome to FitLife Nutrition Page!
+<div class="text">
+ Extreme exercises for those who want to push their limits and achieve maximum muscle growth!
 </div>
 
 <section>
 
 <div class="exercises">
     <div class="exercise-card">
-        <a href="Nut4Musc.html">
-            <h3>Muscle Training Nutrition</h3>
-            <p>Proper Nutrition for Muscle Training</p>
-        </a>
-    </div>
-
-    <div class="exercise-card">
-        <a href="Nut4Weight.html">
-            <h3>Weight Loss Nutrition</h3>
-            <p>Proper Nutrition for Weight Loss</p>
-        </a>
+        <img src="SpinalTwist.jfif" alt="Bodyweight Squats">
+        <h3>Spinal Twist Stretch</h3>
+        <p>A stretch where you rotate your upper body to one side while keeping your hips stable. It helps improve spinal mobility and relieves tension in the lower back and core.</p>
     </div>
     <div class="exercise-card">
-        <a href="Nut4Flex.html">
-            <h3>Flexibility Nutrition</h3>
-            <p>Proper Nutrition for Flexibility Training</p>
-        </a>
+        <img src="QuadStretch.jpg" alt="Squats">
+        <h3>Prone Quad Stretch</h3>
+        <p>A stretch where you lie face down and pull one foot toward your glutes while keeping your hips on the ground. It targets the quadriceps and helps improve flexibility in the front of the thigh.</p>
     </div>
     <div class="exercise-card">
-        <a href="Nut4Ath.html">
-            <h3>Athletic Nutrition</h3>
-            <p>Proper Nutrition For Athletes</p>
-        </a>
+        <img src="ShoulderStretch.jfif" alt="Deadlift">
+        <h3>Shoulder Stretch</h3>
+        <p>A stretch where you bring one arm across your body and hold it with the opposite hand. It helps improve shoulder mobility and reduces upper body stiffness.</p>
     </div>
-  
+    <div class="exercise-card">
+        <img src="CatCow.jfif" alt="Plank">
+        <h3>Cat-Cow Stretch</h3>
+        <p>A controlled movement where you alternate between arching and rounding your back while on all fours. It improves spinal flexibility and helps relieve tension in the back.</p>
+    </div>
 </div>
-
-</section>
-
+<div class="weekbutton">
+    <button><a href="FlexWeek3.html">Click to access our Week plan for Intense Trainers</a></button>
+</div>
+</body>
 </body>
 </html>
 

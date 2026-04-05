@@ -6,41 +6,51 @@
 <title>FitLife - Muscle Training</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
 
-
-
 <style>
 
 .sidebar {
     position: fixed;
     top: 0;
-    left: -220px;       
-    width: 200px;         
+    left: -30%;
+    width: 20%;
     height: 100%;
     background: #f2f2f2;
-    padding: 20px;
+    padding: 2px;
     box-shadow: 2px 0 5px rgba(0,0,0,0.2);
     transition: left 0.3s ease;
     z-index: 1000;
 }
 
-
-.sidebar-trigger {
-    position: fixed;
-    top: 0;
+.sidebar.open {
     left: 0;
-    width: 10px;          
-    height: 100%;
-    z-index: 999;
+}
+
+.main {
+    width: 100%;
+    transition: margin-left 0.3s ease, width 0.3s ease;
+}
+
+.sidebar.open ~ .main {
+    margin-left: 20%;
+    width: 80%;
+}
+
+.burger-btn {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    color: rgb(98,174,144);
     cursor: pointer;
-    background: transparent;
+    padding: 5px 10px;
+    display: flex;
+    align-items: center;
 }
 
-
-.sidebar-trigger:hover + .sidebar,
-.sidebar:hover {
-    left: 0;
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
-
 
 .buttons {
     display: flex;
@@ -64,239 +74,202 @@
     text-decoration: none;
     text-align: center;
     border-radius: 5px;
-} 
+}
+
 .button:hover {
     background: #02835e;
 }
 
-
-.content {
-    transition: margin-left 0.3s ease;
-}
-
-.sidebar:hover ~ .content {
-    margin-left: 200px; 
-}
-
-body{
-    margin:0;
-    font-family:'Orbitron', sans-serif;
+body {
+    margin: 0;
+    font-family: 'Orbitron', sans-serif;
     background-color: mintcream;
     color: #222;
 }
 
-
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 40px;
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(6px);
-    position:sticky;
-    top:0;
-    z-index:10;
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.85);
+    backdrop-filter: blur(6px);
+    position: sticky;
+    top: 0;
+    z-index: 10;
 }
 
-.logo-section{
-    display:flex;
-    align-items:center;
-    gap:10px;
+.logo-section {
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
-.logo{
-    width:50px;
+.logo {
+    width: 50px;
 }
 
-.site-name{
-    font-size:26px;
-    color:rgb(98,174,144);
-    font-weight:bold;
+.site-name {
+    font-size: 26px;
+    color: rgb(98,174,144);
+    font-weight: bold;
 }
 
-.nav{
-    display:flex;
-    gap:20px;
+.nav {
+    display: flex;
+    gap: 20px;
 }
 
-.nav a{
-    text-decoration:none;
-    color:rgb(98,174,144);
-    font-weight:bold;
-    position:relative;
+.nav a {
+    text-decoration: none;
+    color: rgb(98,174,144);
+    font-weight: bold;
+    position: relative;
 }
 
-.nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    width:0%;
-    height:2px;
-    background:rgb(2,131,94);
-    transition:0.3s;
+.nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    width: 0%;
+    height: 2px;
+    background: rgb(2,131,94);
+    transition: 0.3s;
 }
 
-.nav a:hover::after{
-    width:100%;
+.nav a:hover::after {
+    width: 100%;
 }
 
+.text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background: url('muscle-hero.jpg') center/cover no-repeat;
+    color: black;
+    text-shadow: 0 0 10px black;
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+section {
+    padding: 50px 20px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.exercises {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 20px;
+}
+
+.exercise-card {
+    background: lightblue;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.exercise-card:hover {
+    transform: scale(1.05);
+}
+
+.exercise-card h3 {
+    margin: 15px 0 5px 0;
+}
+
+.exercise-card p {
+    padding: 0 10px 15px 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
 a{
     color: inherit;
     text-decoration: none;
 }
-
-.hero{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:60vh;
-    background: url('muscle-hero.jpg') center/cover no-repeat;
-    color:white;
-    text-shadow: 0 0 10px black;
-    font-size:2.5rem;
-    text-align:center;
-}
-
-
-section{
-    padding:50px 20px;
-    max-width:1200px;
-    margin:auto;
-}
-
-h2{
-    color:rgb(98,174,144);
-    text-align:center;
-    margin-bottom:30px;
-}
-
-
-.exercises{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap:20px;
-}
-
-.exercise-card{
-    background:white;
-    border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
-    overflow:hidden;
-    transition:transform 0.3s;
-    text-align:center;
-}
-
-.exercise-card:hover{
-    transform: scale(1.05);
-}
-
-.exercise-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.exercise-card h3{
-    margin:15px 0 5px 0;
-}
-
-.exercise-card p{
-    padding:0 10px 15px 10px;
-    font-size:0.9rem;
-    color:#555;
-}
-
-.exercise-card a{
-    display: block;
-    height: 100%;
-}
-
-.cta{
-    display:flex;
-    justify-content:center;
-    margin-top:40px;
-}
-
-.cta button{
-    padding:15px 30px;
-    font-size:1.2rem;
-    background-color:rgb(98,174,144);
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    transition:all 0.3s;
-}
-
-.cta button:hover{
-    background-color:rgb(2,131,94);
-    box-shadow:0 0 15px #00ff99;
-}
-
 </style>
 </head>
 
-<div class="sidebar-trigger"></div>
-
+<body>
 
 <div class="sidebar">
     <div class="buttons">
-        <a href="muscle.html" target="content" class="button1">Muscle Training</a>
-        <a href="Weight.html" target="content" class="button">Weight Loss</a>
-        <a href="Flex.html" target="content" class="button">Flexibility</a>
-        <a href="Athlete.html" target="content" class="button">Athlete</a>
-        <a href="bmi.html" target="content" class="button">BMI Calculator</a>
+     <h3>   Other Options: </h3>
+        <a href="muscle.html" class="button1">Muscle Training</a>
+        <a href="Weight.html" class="button">Weight Loss</a>
+        <a href="Flex.html" class="button">Flexibility</a>
+        <a href="Athlete.html" class="button">Athlete</a>
     </div>
 </div>
+
+<div class="main">
+
 <header>
-<div class="logo-section">
-   <a href="main.html"> <img src="logo.png" class="logo"> </a>
-    <div class="site-name">MuscleTraining</div>
+<div class="left-section">
+    <button class="burger-btn">☰</button>
+    <div class="logo-section">
+        <a href="main.html"><img src="logo.png" class="logo"></a>
+        <div class="site-name">MuscleTraining</div>
+    </div>
 </div>
 
 <nav class="nav">
-    <a href="main.html" target="content">Home</a>
-    <a href="MuscleTraining.html" target="content">Muscle Training</a>
-    <a href="Nut4Musc.html" target="content">Nutrition</a>
-    <a href="About.html" target="content">About</a>
+    <a href="main.html">Home</a>
+    <a href="Nut4Musc.html">Nutrition</a>
+    <a href="About.html">About</a>
 </nav>
 </header>
 
-<div class="hero">
-    Build Strength & Muscle Effectively
+<div class="text">
+   Pick your difficulty level and start your muscle training journey!
 </div>
 
 <section>
-<h2>Top Muscle Training Exercises for beginners</h2>
 <div class="exercises">
-    <div class="exercise-card">
-        <img src="pushup.jpg" alt="Push-Ups">
-        <h3>Push-Ups</h3>
-        <p>Classic chest and arm workout, targets your chest, shoulders, and triceps.</p>
-    </div>
-    <div class="exercise-card">
-        <img src="squat.jpg" alt="Squats">
-        <h3>Squats</h3>
-        <p>Essential leg exercise that strengthens quads, glutes, and core stability.</p>
-    </div>
-    <div class="exercise-card">
-        <img src="deadlift.jpg" alt="Deadlift">
-        <h3>Deadlifts</h3>
-        <p>Powerful full-body lift focusing on back, legs, and grip strength.</p>
-    </div>
-    <div class="exercise-card">
-        <img src="plank.jpg" alt="Plank">
-        <h3>Plank</h3>
-        <p>Core strengthening exercise improving posture and abdominal endurance.</p>
-    </div>
-</div>
+    <a href="MuscleTrainingLight.html">
+        <div class="exercise-card">
+            <h3>Light</h3>
+            <p>Recommended for beginners.</p>
+        </div>
+    </a>
 
-<div class="cta">
-    <button><a href="MuscleTraining.html"> Start Your Muscle Training Plan</a></button>
+    <a href="MuscleTrainingHard.html">
+        <div class="exercise-card">
+            <h3>Hard</h3>
+            <p>For those with past experiences.</p>
+        </div>
+    </a>
+
+    <a href="MuscleTrainingIntense.html">
+        <div class="exercise-card">
+            <h3>Intense</h3>
+            <p>For advanced practitioners looking to find new challenges.</p>
+        </div>
+    </a>
 </div>
 </section>
 
+</div>
+
+<script>
+const burgerBtn = document.querySelector('.burger-btn');
+const sidebar = document.querySelector('.sidebar');
+
+burgerBtn.addEventListener('click', () => {
+    sidebar.classList.toggle('open');
+});
+
+document.addEventListener('click', (e) => {
+    if (!sidebar.contains(e.target) && !burgerBtn.contains(e.target)) {
+        sidebar.classList.remove('open');
+    }
+});
+</script>
+
 </body>
 </html>
-
