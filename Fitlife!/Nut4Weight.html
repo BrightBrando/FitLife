@@ -1,287 +1,281 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FitLife!</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife! | Weight Loss Nutrition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: rgb(98, 174, 144);
+            --primary-dark: rgb(2, 131, 94);
+            --bg-light: #f5fffb;
+            --card-bg: #ffffff;
+            --text-main: #222;
+            --text-muted: #555;
+        }
 
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-<style>
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
 
-body{
-    margin:0;
-    font-family:'Orbitron', sans-serif;
-    background-color: mintcream;
-    color: #222;
-}
+        .logo { width: 45px; }
 
+        .site-name {
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 40px;
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(6px);
-    position:sticky;
-    top:0;
-    z-index:10;
-}
+        .nav { display: flex; gap: 25px; }
 
-.logo-section{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
+        .nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 0.9rem;
+            position: relative;
+            padding-bottom: 5px;
+        }
 
-.logo{
-    width:50px;
-}
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary-dark);
+            transition: width 0.3s ease;
+        }
 
-.site-name{
-    font-size:26px;
-    color:rgb(98,174,144);
-    font-weight:bold;
-}
+        .nav a:hover::after { width: 100%; }
 
-.nav{
-    display:flex;
-    gap:20px;
-}
+        .hero-mini {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('muscle-hero.jpg') center/cover no-repeat;
+            color: white;
+            font-size: 1.5rem;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
 
-.nav a{
-    text-decoration:none;
-    color:rgb(98,174,144);
-    font-weight:bold;
-    position:relative;
-}
+        .comparison-wrapper {
+            display: flex;
+            gap: 20px;
+            padding: 40px;
+            overflow-x: auto;
+            justify-content: center;
+            align-items: stretch;
+        }
 
-.nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    width:0%;
-    height:2px;
-    background:rgb(2,131,94);
-    transition:0.3s;
-}
+        .nutrition-card {
+            flex: 1;
+            min-width: 280px;
+            max-width: 320px;
+            background: var(--card-bg);
+            border-radius: 20px;
+            padding: 25px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            border: 1px solid #eee;
+            transition: 0.3s;
+        }
 
-.nav a:hover::after{
-    width:100%;
-}
+        .nutrition-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--primary);
+            box-shadow: 0 15px 35px rgba(98, 174, 144, 0.2);
+        }
 
-a{
-    color: inherit;
-    text-decoration: none;
-}
+        .nutrition-card h1 {
+            font-size: 1.6rem;
+            color: var(--primary-dark);
+            text-align: center;
+            margin: 0 0 20px 0;
+            background: var(--bg-light);
+            padding: 10px;
+            border-radius: 12px;
+        }
 
-.text{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:60vh;
-    background: url('muscle-hero.jpg') center/cover no-repeat;
-    color:black;
-    text-shadow: 0 0 10px black;
-    font-size:2.5rem;
-    text-align:center;
-}
+        .section-header {
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin: 20px 0 8px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 1px solid #f0f0f0;
+        }
 
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
 
-section{
-    padding:50px 20px;
-    max-width:1200px;
-    margin:auto;
-}
+        li {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-bottom: 6px;
+            padding-left: 15px;
+            position: relative;
+        }
 
-h2{
-    color:rgb(98,174,144);
-    text-align:center;
-    margin-bottom:30px;
-}
+        li::before {
+            content: "•";
+            color: var(--primary);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
 
+        /* Custom Scrollbar for the horizontal wrapper */
+        .comparison-wrapper::-webkit-scrollbar { height: 8px; }
+        .comparison-wrapper::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
 
-.exercises{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap:20px;
-}
-
-.exercise-card{
-    background: lightblue;
-    border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
-    overflow:hidden;
-    transition:transform 0.3s;
-    text-align:center;
-}
-
-.exercise-card:hover{
-    transform: scale(1.05);
-}
-
-.exercise-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.exercise-card h3{
-    margin:15px 0 5px 0;
-    color: inherit;
-text-decoration: none;
-}
-
-.exercise-card a{
-    display: block;
-    height: 100%;
-}
-
-.exercise-card p{
-    padding:0 10px 15px 10px;
-    font-size:0.9rem;
-    color:#555;
-}
-
-</style>
+    </style>
 </head>
+<body>
 
 <header>
-<div class="logo-section">
-   <a href="main.html"> <img src="logo.png" class="logo"> </a>
-    <div class="site-name">Home</div>
-</div>
-
-<nav class="nav">
-    <a href="main.html" target="content">Home</a>
-    <a href="Nutrition.html" target="content">Nutrition</a>
-    <a href="About.html" target="content">About</a>
-</nav>
+    <a href="main.html" class="logo-section">
+        <img src="logo.png" class="logo" alt="FitLife Logo">
+        <div class="site-name">FITLIFE</div>
+    </a>
+    
+    <nav class="nav">
+        <a href="main.html">HOME</a>
+        <a href="Nutrition.html">NUTRITION</a>
+        <a href="About.html">ABOUT</a>
+    </nav>
 </header>
 
-<div class="text">
-    Pick your weight range and find the best nutrition for you!
+<div class="hero-mini">
+    WEIGHT LOSS NUTRITION BY RANGE
 </div>
 
-<section>
-
-<div class="exercises">
-    <div class="exercise-card">
-       
-            <h1>50-60 kg</h1>
-                <h3> Target Macronutrients Amount</h3>
-                <ul>
-                    <li>Protein: 80–130g</li>
-                    <li>Carbs: 100-200g</li>
-                    <li>Fats: 20-50g</li>
-                    <li>Calories: deficit (−300 to −500)</li>
-                </ul>   
-            <p><br> <h3>What to eat</h3><br>
-                <ul>
-                     <li>Protein: chicken breast, fish, eggs</li>
-                    <li>Carbs: rice (smaller portions), oats</li>
-                    <li>Fats: peanut butter, eggs</li>
-                    <li>Extras: vegetables (VERY important)</li>
-                </ul>
-            </p>
-            <p> <br><h3> Guide</h3><br>
-                <ul>
-                    <li>Keeping protein high</li>
-                    <li>Eating lesser</li>
-                    <li>Staying Hydrated</li>
-                </ul> </p>
-
-</p>
-    
+<div class="comparison-wrapper">
+    <div class="nutrition-card">
+        <h1>50-60 kg</h1>
+        <div class="section-header">Target Macros</div>
+        <ul>
+            <li>Protein: 80–130g</li>
+            <li>Carbs: 100–200g</li>
+            <li>Fats: 20–50g</li>
+            <li>Calories: Deficit (-300 to -500)</li>
+        </ul>
+        <div class="section-header">What to Eat</div>
+        <ul>
+            <li>Chicken breast, Fish, Eggs</li>
+            <li>Oats, Small portions of rice</li>
+            <li>Peanut butter</li>
+            <li>Vegetables (Crucial)</li>
+        </ul>
+        <div class="section-header">Guide</div>
+        <ul>
+            <li>Prioritize High Protein</li>
+            <li>Caloric Restriction</li>
+            <li>Stay Hydrated</li>
+        </ul>
     </div>
 
-    <div class="exercise-card">
-   
-            <h1>60-70 kg</h1>
-   <h3>Target Macronutrients Amount</h3>
-   <ul>
-                    <li>Protein: 100–150g</li>
-                    <li>Carbs: 120-220g</li>
-                    <li>Fats: 25-60g</li>
-                    <li>Calories: deficit</li>
-                </ul>   
-            <p><br> <h3>What to eat</h3><br>
-                <ul>
-                     <li>Protein: chicken breast, fish, eggs</li>
-                    <li>Carbs: rice (smaller portions), oats</li>
-                    <li>Fats: peanut butter, eggs</li>
-                    <li>Extras: vegetables (VERY important)</li>
-                </ul>
-            </p>
-            <p> <br><h3>Guide</h3><br>
-                <ul>
-                    <li>Keeping protein high</li>
-                    <li>Eating lesser</li>
-                    <li>Staying Hydrated</li>
-                </ul> </p>
-</p>        
-    </div>
-    <div class="exercise-card">
-    
-            <h1>70-80 kg</h1>
-   <h3> Target Macronutrients Amount</h3>
-                <ul>
-                    <li>Protein: 110-170g</li>
-                    <li>Carbs: 140–250g</li>
-                    <li>Fats: 30–70g</li>
-                    <li>Calories: deficit</li>
-                </ul>   
-            <p><br> <h3>What to eat</h3><br>
-                <ul>
-                     <li>Protein: chicken breast, fish, eggs</li>
-                    <li>Carbs: rice (smaller portions), oats</li>
-                    <li>Fats: peanut butter, eggs</li>
-                    <li>Extras: vegetables (VERY important)</li>
-                </ul>
-            </p>
-            <p> <br><h3> Guide</h3><br>
-                <ul>
-                    <li>Keeping protein high</li>
-                    <li>Eating lesser</li>
-                    <li>Staying Hydrated</li>
-                </ul> </p>
-</p>     
-    </div>
-    <div class="exercise-card">
-       
-            <h1>80-90 kg</h1>
-   <h3> Target Macronutrients Amount</h3>
-                <ul>
-                    <li>Protein: 130-200g</li>
-                    <li>Carbs: 160–280g</li>
-                    <li>Fats: 40–80g</li>
-                    <li>Calories: deficit</li>
-                </ul>   
-            <p><br> <h3>What to eat</h3><br>
-                <ul>
-                    <li>Protein: chicken breast, fish, eggs</li>
-                    <li>Carbs: rice (smaller portions), oats</li>
-                    <li>Fats: peanut butter, eggs</li>
-                    <li>Extras: vegetables (VERY important)</li>
-                </ul>
-            </p>
-            <p> <br><h3> Guide</h3><br>
-                <ul>
-                    <li>Keeping protein high</li>
-                    <li>Eating lesser</li>
-                    <li>Staying Hydrated</li>
-                </ul> </p>
-</p>       
+    <div class="nutrition-card">
+        <h1>60-70 kg</h1>
+        <div class="section-header">Target Macros</div>
+        <ul>
+            <li>Protein: 100–150g</li>
+            <li>Carbs: 120–220g</li>
+            <li>Fats: 25–60g</li>
+            <li>Calories: Deficit</li>
+        </ul>
+        <div class="section-header">What to Eat</div>
+        <ul>
+            <li>Chicken breast, Fish, Eggs</li>
+            <li>Oats, Whole grains</li>
+            <li>Healthy Fats (Avocado/Nuts)</li>
+            <li>Vegetables (Crucial)</li>
+        </ul>
+        <div class="section-header">Guide</div>
+        <ul>
+            <li>Maintain Lean Mass</li>
+            <li>Controlled Portions</li>
+            <li>High Satiety Foods</li>
+        </ul>
     </div>
 
-    
+    <div class="nutrition-card">
+        <h1>70-80 kg</h1>
+        <div class="section-header">Target Macros</div>
+        <ul>
+            <li>Protein: 110–170g</li>
+            <li>Carbs: 140–250g</li>
+            <li>Fats: 30–70g</li>
+            <li>Calories: Deficit</li>
+        </ul>
+        <div class="section-header">What to Eat</div>
+        <ul>
+            <li>Chicken breast, Lean beef</li>
+            <li>Complex Carbs</li>
+            <li>Peanut butter, Eggs</li>
+            <li>Vegetables (Crucial)</li>
+        </ul>
+        <div class="section-header">Guide</div>
+        <ul>
+            <li>Protein Synthesis Focus</li>
+            <li>Metabolic Consistency</li>
+            <li>Stay Hydrated</li>
+        </ul>
+    </div>
+
+    <div class="nutrition-card">
+        <h1>80-90 kg</h1>
+        <div class="section-header">Target Macros</div>
+        <ul>
+            <li>Protein: 130–200g</li>
+            <li>Carbs: 160–280g</li>
+            <li>Fats: 40–80g</li>
+            <li>Calories: Deficit</li>
+        </ul>
+        <div class="section-header">What to Eat</div>
+        <ul>
+            <li>Lean Proteins</li>
+            <li>Rice (Small portions), Oats</li>
+            <li>Healthy Fats</li>
+            <li>Vegetables (Crucial)</li>
+        </ul>
+        <div class="section-header">Guide</div>
+        <ul>
+            <li>Maximum Muscle Retention</li>
+            <li>Sustained Energy Flow</li>
+            <li>Consistency is Key</li>
+        </ul>
+    </div>
 </div>
-
-</section>
 
 </body>
 </html>
-

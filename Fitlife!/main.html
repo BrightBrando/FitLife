@@ -1,210 +1,216 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FitLife!</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife! | Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: rgb(98, 174, 144);
+            --primary-dark: rgb(2, 131, 94);
+            --bg-light: #f5fffb;
+            --card-bg: #ffffff;
+            --text-main: #222;
+            --text-muted: #555;
+        }
 
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-<style>
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
 
-body{
-    margin:0;
-    font-family:'Orbitron', sans-serif;
-    background-color: mintcream;
-    color: #222;
-}
+        .logo { width: 45px; transition: 0.3s; }
 
+        .site-name {
+            font-size: 24px;
+            color: var(--primary);
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 40px;
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(6px);
-    position:sticky;
-    top:0;
-    z-index:10;
-}
+        .nav { display: flex; gap: 25px; }
 
-.logo-section{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
+        .nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 0.9rem;
+            position: relative;
+            padding-bottom: 5px;
+            transition: color 0.3s;
+        }
 
-.logo{
-    width:50px;
-}
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0%;
+            height: 2px;
+            background: var(--primary-dark);
+            transition: width 0.3s ease;
+        }
 
-.site-name{
-    font-size:26px;
-    color:rgb(98,174,144);
-    font-weight:bold;
-}
+        .nav a:hover::after {
+            width: 100%;
+        }
 
-.nav{
-    display:flex;
-    gap:20px;
-}
+        .nav a:hover {
+            color: var(--primary-dark);
+        }
 
-.nav a{
-    text-decoration:none;
-    color:rgb(98,174,144);
-    font-weight:bold;
-    position:relative;
-}
+        .hero {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 50vh;
+            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), 
+                        url('muscle-hero.jpg') center/cover no-repeat;
+            color: white;
+            text-shadow: 0 4px 15px rgba(0,0,0,0.5);
+            font-size: 3rem;
+            text-align: center;
+            letter-spacing: 3px;
+        }
 
-.nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    width:0%;
-    height:2px;
-    background:rgb(2,131,94);
-    transition:0.3s;
-}
+        section {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
 
-.nav a:hover::after{
-    width:100%;
-}
+        h2 {
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+        }
 
-a{
-    color: inherit;
-    text-decoration: none;
-}
+        .exercises {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
 
-.text{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:60vh;
-    background: url('muscle-hero.jpg') center/cover no-repeat;
-    color:black;
-    text-shadow: 0 0 10px black;
-    font-size:2.5rem;
-    text-align:center;
-}
+        .exercise-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
 
+        .exercise-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(98, 174, 144, 0.2);
+        }
 
-section{
-    padding:50px 20px;
-    max-width:1200px;
-    margin:auto;
-}
+        .exercise-card a {
+            padding: 30px 20px;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
 
-h2{
-    color:rgb(98,174,144);
-    text-align:center;
-    margin-bottom:30px;
-}
+        .exercise-card h3 {
+            margin: 0 0 15px 0;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+        }
 
-
-.exercises{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap:20px;
-}
-
-.exercise-card{
-    background: lightblue;
-    border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
-    overflow:hidden;
-    transition:transform 0.3s;
-    text-align:center;
-}
-
-.exercise-card:hover{
-    transform: scale(1.05);
-}
-
-.exercise-card img{
-    width:100%;
-    height:200px;
-    object-fit:cover;
-}
-
-.exercise-card h3{
-    margin:15px 0 5px 0;
-    color: inherit;
-text-decoration: none;
-}
-
-.exercise-card a{
-    display: block;
-    height: 100%;
-}
-
-.exercise-card p{
-    padding:0 10px 15px 10px;
-    font-size:0.9rem;
-    color:#555;
-}
-
-</style>
+        .exercise-card p {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin: 0;
+        }
+    </style>
 </head>
+<body>
 
 <header>
-<div class="logo-section">
-   <a href="main.html"> <img src="logo.png" class="logo"> </a>
-    <div class="site-name">Home</div>
-</div>
-
-<nav class="nav">
-    <a href="main.html" target="content">Home</a>
-    <a href="Nutrition.html" target="content">Nutrition</a>
-    <a href="About.html" target="content">About</a>
-</nav>
+    <a href="main.html" class="logo-section">
+        <img src="logo.png" class="logo" alt="FitLife Logo">
+        <div class="site-name">FITLIFE</div>
+    </a>
+    
+    <nav class="nav">
+        <a href="main.html">HOME</a>
+        <a href="Nutrition.html">NUTRITION</a>
+        <a href="About.html">ABOUT</a>
+    </nav>
 </header>
 
-<div class="text">
-    Welcome to FitLife!
+<div class="hero">
+    WELCOME TO FITLIFE!
 </div>
 
 <section>
-<h2>Top Fitness Choices!</h2>
-<div class="exercises">
-    <div class="exercise-card">
-        <a href="muscle.html">
-            <h3>Muscle Training</h3>
-            <p>Muscle training is a form of physical exercise that focuses on using resistance to build muscle strength and endurance. It involves challenging the muscles to work against resistance, typically by contracting them against heavy resistance and then returning to the starting position. </p>
-        </a>
-    </div>
+    <h2>TOP FITNESS CHOICES</h2>
+    <div class="exercises">
+        <div class="exercise-card">
+            <a href="muscle.html">
+                <h3>Muscle Training</h3>
+                <p>Focus on using resistance to build strength and endurance. Challenge your muscles against gravity and weights.</p>
+            </a>
+        </div>
 
-    <div class="exercise-card">
-        <a href="weight.html">
-            <h3>Weight Loss</h3>
-            <p>Focuses on exercises that help burn calories and reduce body fat over time. Combines cardio and simple movements to improve endurance and overall fitness.</p>
-        </a>
-    </div>
-    <div class="exercise-card">
-        <a href="flex.html">
-            <h3>Flexibility</h3>
-            <p>Improves your range of motion through stretching and controlled movements. Helps prevent injuries and enhances overall body mobility.</p>
-        </a>
-    </div>
-    <div class="exercise-card">
-        <a href="Athlete.html">
-            <h3>Athlete</h3>
-            <p>Designed for high-performance training to improve strength, speed, and endurance. Ideal for individuals aiming to enhance their overall athletic ability and conditioning.</p>
-        </a>
-    </div>
-    <div class="exercise-card">
-        <a href="BMI.html">
-            <h3>BMI Calculator</h3>
-            <p>Calculate your Body Mass Index (BMI) to assess your weight status.</p>
-        </a>
-    </div>
-    
-</div>
+        <div class="exercise-card">
+            <a href="weight.html">
+                <h3>Weight Loss</h3>
+                <p>Burn calories and reduce body fat through high-energy cardio and efficient full-body movements.</p>
+            </a>
+        </div>
 
+        <div class="exercise-card">
+            <a href="flex.html">
+                <h3>Flexibility</h3>
+                <p>Improve range of motion and prevent injury. Stay mobile with guided stretching and recovery techniques.</p>
+            </a>
+        </div>
+
+        <div class="exercise-card">
+            <a href="Athlete.html">
+                <h3>Athlete</h3>
+                <p>High-performance training for speed and power. Built for those pushing the limits of human conditioning.</p>
+            </a>
+        </div>
+
+        <div class="exercise-card">
+            <a href="BMI.html">
+                <h3>BMI Calculator</h3>
+                <p>Knowledge is power. Quickly assess your weight status to help guide your fitness journey goals.</p>
+            </a>
+        </div>
+    </div>
 </section>
 
 </body>
 </html>
-
