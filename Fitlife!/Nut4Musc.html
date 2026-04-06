@@ -20,7 +20,7 @@
             font-family: 'Orbitron', sans-serif;
             background-color: var(--bg-light);
             color: var(--text-main);
-            overflow-x: hidden; /* Prevents awkward page shaking */
+            overflow-x: hidden;
         }
 
         header {
@@ -60,19 +60,16 @@
             letter-spacing: 1px;
         }
 
-        /* The One-Scroll Container */
         .comparison-wrapper {
             display: flex;
             gap: 15px;
             padding: 40px 20px;
-            overflow-x: auto; /* Allows horizontal scrolling on mobile */
+            overflow-x: auto;
             justify-content: center;
             align-items: stretch;
         }
 
         .nutrition-card {
-            flex: 1;
-            min-width: 260px; /* Ensures they don't get too squished */
             max-width: 300px;
             background: var(--card-bg);
             border-radius: 15px;
@@ -133,7 +130,6 @@
             border: 1px dashed var(--primary);
         }
 
-        /* Custom Scrollbar for the wrapper */
         .comparison-wrapper::-webkit-scrollbar { height: 8px; }
         .comparison-wrapper::-webkit-scrollbar-thumb { background: var(--primary); border-radius: 10px; }
     </style>
