@@ -3,34 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FitLife - Flexibility Intermediate</title>
+<title>FitLife - Flexibility Light</title>
 <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 
 <style>
     :root {
         --primary: rgb(98, 174, 144);
         --primary-dark: rgb(2, 131, 94);
-        --bg-mint: mintcream;
-        --card-shadow: 0 10px 25px rgba(0,0,0,0.05);
-        --card-hover-shadow: 0 15px 35px rgba(98, 174, 144, 0.2);
     }
 
     body {
         margin: 0;
         font-family: 'Inter', sans-serif;
-        background-color: var(--bg-mint);
+        background-color: mintcream;
         color: #222;
-        overflow-x: hidden;
     }
 
-    /* HEADER */
     header {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 40px;
-        background: rgba(255, 255, 255, 0.95);
-        backdrop-filter: blur(10px);
+        padding: 10px 40px;
+        background: rgba(255, 255, 255, 0.9);
+        backdrop-filter: blur(6px);
         position: sticky;
         top: 0;
         z-index: 100;
@@ -47,88 +42,79 @@
         background: var(--primary);
         color: white;
         text-decoration: none;
-        padding: 8px 18px;
-        border-radius: 8px;
-        font-size: 0.8rem;
+        padding: 8px 16px;
+        border-radius: 20px;
+        font-size: 0.75rem;
         font-weight: bold;
         font-family: 'Orbitron', sans-serif;
-        transition: all 0.3s ease;
-        border: none;
-        cursor: pointer;
+        transition: 0.3s;
     }
 
     .back-btn:hover { 
-        background: var(--primary-dark);
-        transform: translateX(-3px);
+        background: var(--primary-dark); 
+        box-shadow: 0 4px 10px rgba(98, 174, 144, 0.3);
     }
 
     .logo { width: 45px; }
-
     .site-name { 
         font-family: 'Orbitron', sans-serif;
-        font-size: 24px; 
+        font-size: 22px; 
         color: var(--primary); 
         font-weight: bold; 
-        letter-spacing: 1px;
     }
 
-    .nav { display: flex; gap: 25px; }
+    .nav { display: flex; gap: 20px; }
     .nav a {
         text-decoration: none;
         color: var(--primary);
         font-family: 'Orbitron', sans-serif;
         font-weight: bold;
         font-size: 0.85rem;
-        transition: 0.3s;
     }
-    .nav a:hover { color: var(--primary-dark); }
 
-    /* HERO SECTION */
     .hero-text {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 45vh;
-        background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('muscle-hero.jpg') center/cover no-repeat;
+        height: 50vh;
+        background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('muscle-hero.jpg') center/cover no-repeat;
         color: white;
         font-family: 'Orbitron', sans-serif;
         font-size: 2.2rem;
         text-align: center;
-        padding: 0 20px;
-        text-shadow: 0 4px 15px rgba(0,0,0,0.6);
+        padding: 20px;
+        text-shadow: 0 4px 10px rgba(0,0,0,0.5);
     }
 
-    /* EXERCISES GRID */
     section {
-        padding: 60px 20px;
+        padding: 50px 20px;
         max-width: 1200px;
         margin: auto;
     }
 
     .exercises {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-        gap: 30px;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
     }
 
     .exercise-card {
         background: white;
-        border-radius: 20px;
-        box-shadow: var(--card-shadow);
+        border-radius: 15px;
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
         overflow: hidden;
-        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        transition: transform 0.3s ease;
         text-align: center;
-        border-bottom: 6px solid var(--primary);
+        border-bottom: 4px solid var(--primary);
     }
 
     .exercise-card:hover {
-        transform: translateY(-12px);
-        box-shadow: var(--card-hover-shadow);
+        transform: translateY(-10px);
     }
 
     .exercise-card img {
         width: 100%;
-        height: 230px;
+        height: 220px;
         object-fit: cover;
     }
 
@@ -136,25 +122,24 @@
         font-family: 'Orbitron', sans-serif;
         margin: 20px 0 10px 0;
         color: var(--primary-dark);
-        font-size: 1.15rem;
+        font-size: 1.1rem;
     }
 
     .exercise-card p {
-        padding: 0 20px 25px 20px;
-        font-size: 0.95rem;
+        padding: 0 15px 25px 15px;
+        font-size: 0.9rem;
         color: #555;
         line-height: 1.6;
     }
 
-    /* WEEK BUTTON */
     .weekbutton {
         display: flex;
         justify-content: center;
-        margin: 60px 0;
+        margin-top: 50px;
     }
 
     .cta-button {
-        padding: 18px 45px;
+        padding: 15px 35px;
         font-family: 'Orbitron', sans-serif;
         font-size: 1rem;
         background-color: var(--primary);
@@ -163,20 +148,13 @@
         border-radius: 50px;
         font-weight: bold;
         transition: 0.3s;
-        box-shadow: 0 5px 15px rgba(98, 174, 144, 0.3);
-        display: inline-block;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.1);
     }
 
     .cta-button:hover {
         background-color: var(--primary-dark);
-        box-shadow: 0 8px 25px rgba(2, 131, 94, 0.4);
+        box-shadow: 0 6px 20px rgba(2, 131, 94, 0.4);
         transform: scale(1.05);
-    }
-
-    @media (max-width: 768px) {
-        header { padding: 10px 20px; }
-        .hero-text { font-size: 1.5rem; height: 35vh; }
-        .site-name { font-size: 18px; }
     }
 </style>
 </head>
@@ -186,7 +164,7 @@
 <header>
     <div class="logo-section">
         <a href="flex.html" class="back-btn">BACK</a>
-        <a href="main.html"><img src="logo.png" class="logo" alt="FitLife Logo"></a>
+        <a href="main.html"><img src="logo.png" class="logo"></a>
         <div class="site-name">FLEXIBILITY</div>
     </div>
 
@@ -198,38 +176,38 @@
 </header>
 
 <div class="hero-text">
-    Intermediate Mobility & Flow
+    INCREASED DIFFICULTY FOR GREATER MOBILITY
 </div>
 
 <section>
     <div class="exercises">
         <div class="exercise-card">
-            <img src="SpinalTwist.jfif" alt="Spinal Twist Stretch">
+            <img src="SpinalTwist.jfif" alt="Spinal Twist">
             <h3>Spinal Twist Stretch</h3>
-            <p>Rotate your upper body while keeping hips stable to improve spinal mobility and core decompression.</p>
+            <p>Improve spinal mobility and relieve lower back tension by rotating the upper body while keeping hips stable.</p>
         </div>
         
         <div class="exercise-card">
-            <img src="QuadStretch.jpg" alt="Prone Quad Stretch">
+            <img src="QuadStretch.jpg" alt="Quad Stretch">
             <h3>Prone Quad Stretch</h3>
-            <p>A deep prone stretch targeting the quadriceps to enhance flexibility in the front of the thigh and hip flexors.</p>
+            <p>Lie face down and gently pull your foot toward your glutes to improve flexibility in the front of the thigh.</p>
         </div>
         
         <div class="exercise-card">
             <img src="ShoulderStretch.jfif" alt="Shoulder Stretch">
             <h3>Shoulder Stretch</h3>
-            <p>Improve lateral shoulder mobility and release upper body stiffness through controlled arm-cross tension.</p>
+            <p>Bring one arm across your body to reduce upper body stiffness and improve range of motion in the shoulders.</p>
         </div>
         
         <div class="exercise-card">
-            <img src="CatCow.jfif" alt="Cat-Cow Stretch">
+            <img src="CatCow.jfif" alt="Cat Cow">
             <h3>Cat-Cow Stretch</h3>
-            <p>A fundamental movement to sync breath with spinal articulation, relieving tension throughout the back.</p>
+            <p>Cycle between arching and rounding your back on all fours to relieve back tension and wake up the spine.</p>
         </div>
     </div>
 
     <div class="weekbutton">
-        <a href="FlexWeek2.html" class="cta-button">INTERMEDIATE WEEKLY PLAN</a>
+        <a href="FlexWeek2.html" class="cta-button">VIEW WEEKLY LIGHT PLAN</a>
     </div>
 </section>
 

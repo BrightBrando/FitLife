@@ -1,260 +1,232 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FitLife - Weight Loss Training</title>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FitLife - Weight Loss Training</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: rgb(98, 174, 144);
+            --primary-dark: rgb(2, 131, 94);
+            --bg-light: #f5fffb;
+            --card-bg: #ffffff;
+            --text-main: #222;
+        }
 
+        body {
+            margin: 0;
+            font-family: 'Orbitron', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-main);
+            overflow-x: hidden;
+        }
 
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 40px;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
 
-<style>
+        .logo-section {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
 
-.buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
+        .back-btn {
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-weight: bold;
+            transition: 0.3s;
+            font-size: 0.8rem;
+        }
 
-.button {
-    padding: 10px;
-    background: #88a99c;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-}
+        .back-btn:hover {
+            background: var(--primary-dark);
+            box-shadow: 0 0 10px rgba(98, 174, 144, 0.5);
+        }
 
-.button1 {
-    padding: 10px;
-    background: #02835e;
-    color: white;
-    text-decoration: none;
-    text-align: center;
-    border-radius: 5px;
-} 
-.button:hover {
-    background: #02835e;
-}
+        .logo { width: 45px; }
+        .site-name { font-size: 22px; color: var(--primary); font-weight: bold; }
 
+        .nav { display: flex; gap: 20px; }
+        .nav a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: bold;
+            font-size: 0.9rem;
+            position: relative;
+        }
 
-.content {
-    transition: margin-left 0.3s ease;
-}
+        .nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0%;
+            height: 2px;
+            background: var(--primary-dark);
+            transition: 0.3s;
+        }
 
-body{
-    margin:0;
-    font-family:'Orbitron', sans-serif;
-    background-color: mintcream;
-    color: #222;
-}
+        .nav a:hover::after { width: 100%; }
 
+        .hero-mini {
+            height: 35vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('muscle-hero.jpg') center/cover;
+            color: white;
+            text-align: center;
+            font-size: 1.8rem;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.5);
+            padding: 0 20px;
+        }
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 40px;
-    background:rgba(255,255,255,0.85);
-    backdrop-filter:blur(6px);
-    position:sticky;
-    top:0;
-    z-index:10;
-}
+        section {
+            padding: 40px 20px;
+            max-width: 1200px;
+            margin: auto;
+        }
 
-.logo-section{
-    display:flex;
-    align-items:center;
-    gap:10px;
-}
+        .exercises {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
 
-.logo{
-    width:50px;
-}
+        .exercise-card {
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.05);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
 
-.site-name{
-    font-size:26px;
-    color:rgb(98,174,144);
-    font-weight:bold;
-}
+        .exercise-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 35px rgba(98, 174, 144, 0.15);
+        }
 
-.nav{
-    display:flex;
-    gap:20px;
-}
+        .exercise-card img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            background-color: #f0f0f0;
+        }
 
-.nav a{
-    text-decoration:none;
-    color:rgb(98,174,144);
-    font-weight:bold;
-    position:relative;
-}
+        .exercise-card h3 {
+            margin: 15px 0 10px 0;
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+        }
 
-.nav a::after{
-    content:"";
-    position:absolute;
-    left:0;
-    bottom:-5px;
-    width:0%;
-    height:2px;
-    background:rgb(2,131,94);
-    transition:0.3s;
-}
+        .exercise-card p {
+            padding: 0 20px 20px 20px;
+            font-size: 0.85rem;
+            color: #666;
+            line-height: 1.5;
+            flex-grow: 1;
+        }
 
-.nav a:hover::after{
-    width:100%;
-}
+        .weekbutton {
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+        }
 
-a{
-    color: inherit;
-    text-decoration: none;
-}
+        .week-link {
+            padding: 15px 35px;
+            font-size: 1rem;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: bold;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(98, 174, 144, 0.3);
+            text-align: center;
+        }
 
-.text{
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:60vh;
-    background: url('muscle-hero.jpg') center/cover no-repeat;
-    color:black;
-    text-shadow: 0 0 10px black;
-    font-size:2.5rem;
-    text-align:center;
-}
+        .week-link:hover {
+            background-color: var(--primary-dark);
+            transform: scale(1.05);
+            box-shadow: 0 8px 20px rgba(2, 131, 94, 0.4);
+        }
 
-
-section{
-    padding:50px 20px;
-    max-width:1200px;
-    margin:auto;
-}
-
-h2{
-    color:rgb(98,174,144);
-    text-align:center;
-    margin-bottom:30px;
-}
-
-
-.exercises{
-    display:grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
-    gap:20px;
-}
-
-.exercise-card{
-    background:lightblue;
-    border-radius:10px;
-    box-shadow:0 0 15px rgba(0,0,0,0.1);
-    overflow:hidden;
-    transition:transform 0.3s;
-    text-align:center;
-}
-
-.exercise-card:hover{
-    transform: scale(1.05);
-}
-
-.exercise-card img{
-    width:100%;
-    height:200px;
-  
-}
-
-.exercise-card h3{
-    margin:15px 0 5px 0;
-}
-
-.exercise-card p{
-    padding:0 10px 15px 10px;
-    font-size:0.9rem;
-    color:#555;
-}
-
-.exercise-card a{
-    display: block;
-    height: 100%;
-}
-
-.weekbutton{
-    display:flex;
-    justify-content:center;
-    margin-top:40px;
-}
-
-.weekbutton button{
-    padding:15px 30px;
-    font-size:1.2rem;
-    background-color:rgb(98,174,144);
-    color:white;
-    border:none;
-    border-radius:8px;
-    cursor:pointer;
-    transition:all 0.3s;
-}
-
-.weekbutton button:hover{
-    background-color:rgb(2,131,94);
-    box-shadow:0 0 15px #00ff99;
-}
-.logo-section button {
-    padding: 5px 5px;
-    background-color: 
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-</style>
+        @media (max-width: 768px) {
+            .hero-mini { font-size: 1.4rem; height: 25vh; }
+            header { padding: 10px 20px; }
+        }
+    </style>
 </head>
 
+<body>
 
 <header>
-<div class="logo-section">
-      <button><a href="weight.html"><strong><<<</strong></a></button>
-   <a href="main.html"> <img src="logo.png" class="logo"> </a>
-    <div class="site-name">WeightLoss</div>
-</div>
+    <div class="logo-section">
+        <a href="weight.html" class="back-btn"><<<</a>
+        <a href="main.html"><img src="logo.png" class="logo" alt="FitLife Logo"></a>
+        <div class="site-name">WEIGHTLOSS</div>
+    </div>
 
-<nav class="nav">
-    <a href="main.html" target="content">Home</a>
-    <a href="Nut4Weight.html" target="content">Nutrition</a>
-    <a href="About.html" target="content">About</a>
-</nav>
+    <nav class="nav">
+        <a href="main.html">Home</a>
+        <a href="Nut4Weight.html">Nutrition</a>
+        <a href="About.html">About</a>
+    </nav>
 </header>
 
-<div class="text">
- Extreme exercises for those who want to push their limits and achieve maximum muscle growth!
+<div class="hero-mini">
+    Extreme exercises for those who want to push their limits and achieve maximum muscle growth!
 </div>
 
 <section>
+    <div class="exercises">
+        <div class="exercise-card">
+            <img src="JumpingJacks.jpg" alt="Jumping Jacks">
+            <h3>Jumping Jacks</h3>
+            <p>SA full-body cardio exercise where you jump while spreading your legs and raising your arms overhead. It helps increase your heart rate and burn calories efficiently.</p>
+        </div>
+        
+        <div class="exercise-card">
+            <img src="HighKnees.gif" alt="High Knees">
+            <h3>High Knees</h3>
+            <p>A running-in-place motion where you lift your knees toward your chest while pumping your arms. It improves coordination and boosts cardiovascular endurance.</p>
+        </div>
+        
+        <div class="exercise-card">
+            <img src="jogging.gif" alt="Jogging">
+            <h3>Jogging</h3>
+            <p>A steady, light-paced running activity done at a comfortable speed. It helps burn calories and improve overall stamina over time.</p>
+        </div>
+        
+        <div class="exercise-card">
+            <img src="plank.gif" alt="Plank">
+            <h3>Plank</h3>
+            <p>Strengthens your core to enhance stability, posture, and overall body control.</p>
+        </div>
+    </div>
 
-<div class="exercises">
-    <div class="exercise-card">
-        <img src="JumpingJacks.jpg" alt="Jumping Jacks">
-        <h3>Jumping Jacks</h3>
-        <p>SA full-body cardio exercise where you jump while spreading your legs and raising your arms overhead. It helps increase your heart rate and burn calories efficiently.</p>
+    <div class="weekbutton">
+        <a href="WeightWeek3.html" class="week-link">ACCESS WEEKLY INTENSE PLAN</a>
     </div>
-    <div class="exercise-card">
-        <img src="HighKnees.gif" alt="High Knees">
-        <h3>High Knees</h3>
-        <p>A running-in-place motion where you lift your knees toward your chest while pumping your arms. It improves coordination and boosts cardiovascular endurance.</p>
-    </div>
-    <div class="exercise-card">
-        <img src="jogging.gif" alt="Jogging">
-        <h3>Jogging</h3>
-        <p>A steady, light-paced running activity done at a comfortable speed. It helps burn calories and improve overall stamina over time.</p>
-    </div>
-    <div class="exercise-card">
-        <img src="plank.gif" alt="Plank">
-        <h3>Plank</h3>
-        <p>Strengthens your core to enhance stability, posture, and overall body control.</p>
-    </div>
-</div>
-<div class="weekbutton">
-    <button><a href="WeightWeek3.html">Click to access our Week plan for Intense Trainers</a></button>
-</div>
+</section>
 
 </body>
 </html>
